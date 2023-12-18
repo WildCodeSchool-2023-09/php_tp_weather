@@ -1,0 +1,21 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello WeatherController!{% endblock %}
+
+{% block body %}
+    {{ form_start(form) }}
+        {{ form_row(form.name) }}
+        <button type="submit">envoyer</button>
+    {{ form_end(form) }}
+
+    {% if city is defined %}
+    <div>
+        <h1>{{ city }}</h1>
+    </div>
+    {% endif %}
+
+    {% if data is defined %}
+        {{ dump(data) }}
+    {% endif %}
+{% endblock %}
+
